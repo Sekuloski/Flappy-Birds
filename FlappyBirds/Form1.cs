@@ -16,7 +16,7 @@ namespace FlappyBirds
     {
         private Timer timer;
         private bool playing = false;
-        private static int speed;
+        private static float speed;
         private float gravity;
         private int score = 0;
         private int highScore;
@@ -42,7 +42,7 @@ namespace FlappyBirds
         }
         private void StartGame()
         {
-            speed = 5;
+            speed = 0.5f;
             gravity = 0.00981f / 1.5f;
             bird.Left = 133;
             bird.Top = 92;
@@ -170,8 +170,8 @@ namespace FlappyBirds
         }
         private void MovePipes()
         {
-            pipeTop1.Left -= speed;
-            pipeBottom1.Left -= speed;
+            pipeTop1.Left -= (int)(speed * deltaTime);
+            pipeBottom1.Left -= (int)(speed * deltaTime);
             if(pipeBottom1.Left < -180)
             {
                 pipeBottom1.Left = 1800;
@@ -182,8 +182,8 @@ namespace FlappyBirds
                 UpdateScore();
             }
 
-            pipeTop2.Left -= speed;
-            pipeBottom2.Left -= speed;
+            pipeTop2.Left -= (int)(speed * deltaTime);
+            pipeBottom2.Left -= (int)(speed * deltaTime);
             if (pipeBottom2.Left < -180)
             {
                 pipeBottom2.Left = 1800;
@@ -194,8 +194,8 @@ namespace FlappyBirds
                 UpdateScore();
             }
 
-            pipeTop3.Left -= speed;
-            pipeBottom3.Left -= speed;
+            pipeTop3.Left -= (int)(speed * deltaTime);
+            pipeBottom3.Left -= (int)(speed * deltaTime);
             if (pipeBottom3.Left < -180)
             {
                 pipeBottom3.Left = 1800;
@@ -206,8 +206,8 @@ namespace FlappyBirds
                 UpdateScore();
             }
 
-            pipeTop4.Left -= speed;
-            pipeBottom4.Left -= speed;
+            pipeTop4.Left -= (int)(speed * deltaTime);
+            pipeBottom4.Left -= (int)(speed * deltaTime);
             if (pipeBottom4.Left < -180)
             {
                 pipeBottom4.Left = 1800;
@@ -220,8 +220,8 @@ namespace FlappyBirds
         }
         private void MoveGrass()
         {
-            grass.Left -= speed;
-            grass2.Left -= speed;
+            grass.Left -= (int)(speed * deltaTime);
+            grass2.Left -= (int)(speed * deltaTime);
             if (grass.Left < -1444)
             {
                 grass.Left = 1445;
@@ -235,8 +235,8 @@ namespace FlappyBirds
         }
         private void MoveClouds()
         {
-            clouds1.Left -= speed/2;
-            clouds2.Left -= speed/2;
+            clouds1.Left -= (int)(speed * deltaTime)/ 2;
+            clouds2.Left -= (int)(speed * deltaTime)/ 2;
             if (clouds1.Left < -600)
             {
                 clouds1.Left = 1400;
