@@ -44,6 +44,7 @@
             this.restart = new System.Windows.Forms.Button();
             this.highscoreLabel = new System.Windows.Forms.Label();
             this.highscore = new System.Windows.Forms.Label();
+            this.grass2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grass)).BeginInit();
@@ -54,14 +55,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grass2)).BeginInit();
             this.SuspendLayout();
             // 
             // label
             // 
             this.label.AutoSize = true;
-            this.label.BackColor = System.Drawing.Color.Transparent;
+            this.label.BackColor = System.Drawing.Color.White;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(12, 45);
+            this.label.ForeColor = System.Drawing.Color.Black;
+            this.label.Location = new System.Drawing.Point(0, 30);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(93, 31);
             this.label.TabIndex = 4;
@@ -91,9 +94,9 @@
             // grass
             // 
             this.grass.Image = global::FlappyBirds.Properties.Resources.ground;
-            this.grass.Location = new System.Drawing.Point(-16, 715);
+            this.grass.Location = new System.Drawing.Point(0, 715);
             this.grass.Name = "grass";
-            this.grass.Size = new System.Drawing.Size(1448, 268);
+            this.grass.Size = new System.Drawing.Size(1447, 268);
             this.grass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.grass.TabIndex = 3;
             this.grass.TabStop = false;
@@ -171,9 +174,10 @@
             // scoreText
             // 
             this.scoreText.AutoSize = true;
-            this.scoreText.BackColor = System.Drawing.Color.Transparent;
+            this.scoreText.BackColor = System.Drawing.Color.White;
             this.scoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreText.Location = new System.Drawing.Point(100, 45);
+            this.scoreText.ForeColor = System.Drawing.Color.Black;
+            this.scoreText.Location = new System.Drawing.Point(88, 30);
             this.scoreText.Name = "scoreText";
             this.scoreText.Size = new System.Drawing.Size(29, 31);
             this.scoreText.TabIndex = 11;
@@ -185,10 +189,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.start.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start.Location = new System.Drawing.Point(726, 439);
+            this.start.Location = new System.Drawing.Point(602, 439);
             this.start.Margin = new System.Windows.Forms.Padding(2);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(133, 65);
+            this.start.Size = new System.Drawing.Size(183, 87);
             this.start.TabIndex = 12;
             this.start.Text = "Play";
             this.start.UseVisualStyleBackColor = true;
@@ -200,10 +204,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restart.Location = new System.Drawing.Point(702, 439);
+            this.restart.Location = new System.Drawing.Point(566, 439);
             this.restart.Margin = new System.Windows.Forms.Padding(2);
             this.restart.Name = "restart";
-            this.restart.Size = new System.Drawing.Size(172, 65);
+            this.restart.Size = new System.Drawing.Size(234, 87);
             this.restart.TabIndex = 13;
             this.restart.Text = "Restart";
             this.restart.UseVisualStyleBackColor = true;
@@ -213,31 +217,45 @@
             // highscoreLabel
             // 
             this.highscoreLabel.AutoSize = true;
-            this.highscoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.highscoreLabel.BackColor = System.Drawing.Color.White;
             this.highscoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highscoreLabel.Location = new System.Drawing.Point(12, 14);
+            this.highscoreLabel.ForeColor = System.Drawing.Color.Black;
+            this.highscoreLabel.Location = new System.Drawing.Point(0, -1);
             this.highscoreLabel.Name = "highscoreLabel";
             this.highscoreLabel.Size = new System.Drawing.Size(145, 31);
             this.highscoreLabel.TabIndex = 14;
             this.highscoreLabel.Text = "Highscore:";
             // 
-            // highscoreText
+            // highscore
             // 
             this.highscore.AutoSize = true;
-            this.highscore.BackColor = System.Drawing.Color.Transparent;
+            this.highscore.BackColor = System.Drawing.Color.White;
             this.highscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highscore.Location = new System.Drawing.Point(152, 14);
-            this.highscore.Name = "highscoreText";
+            this.highscore.ForeColor = System.Drawing.Color.Black;
+            this.highscore.Location = new System.Drawing.Point(140, -1);
+            this.highscore.Name = "highscore";
             this.highscore.Size = new System.Drawing.Size(29, 31);
             this.highscore.TabIndex = 15;
             this.highscore.Text = "0";
+            // 
+            // grass2
+            // 
+            this.grass2.Image = global::FlappyBirds.Properties.Resources.ground;
+            this.grass2.Location = new System.Drawing.Point(1443, 715);
+            this.grass2.Name = "grass2";
+            this.grass2.Size = new System.Drawing.Size(1448, 268);
+            this.grass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.grass2.TabIndex = 16;
+            this.grass2.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
-            this.ClientSize = new System.Drawing.Size(1426, 839);
+            this.ClientSize = new System.Drawing.Size(1352, 861);
+            this.Controls.Add(this.grass2);
+            this.Controls.Add(this.grass);
             this.Controls.Add(this.restart);
             this.Controls.Add(this.highscoreLabel);
             this.Controls.Add(this.highscore);
@@ -247,13 +265,12 @@
             this.Controls.Add(this.pipeTop3);
             this.Controls.Add(this.pipeTop2);
             this.Controls.Add(this.pipeTop1);
-            this.Controls.Add(this.grass);
-            this.Controls.Add(this.pipeBottom1);
             this.Controls.Add(this.pipeBottom2);
             this.Controls.Add(this.pipeBottom3);
             this.Controls.Add(this.pipeTop4);
             this.Controls.Add(this.pipeBottom4);
             this.Controls.Add(this.bird);
+            this.Controls.Add(this.pipeBottom1);
             this.Name = "Form1";
             this.Text = "Flappy Birds";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Jump);
@@ -268,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grass2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,6 +309,7 @@
         private System.Windows.Forms.Button restart;
         private System.Windows.Forms.Label highscoreLabel;
         private System.Windows.Forms.Label highscore;
+        private System.Windows.Forms.PictureBox grass2;
     }
 }
 

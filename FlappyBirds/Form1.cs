@@ -62,7 +62,6 @@ namespace FlappyBirds
             timer.Start();
             stopWatch.Start();
         }
-
         private void GetHighScore()
         {
             if (!File.Exists("highscore.txt"))
@@ -79,7 +78,6 @@ namespace FlappyBirds
             Console.WriteLine(highScore);
             highscore.Text = highScore.ToString();
         }
-
         private void SetHighScore()
         {
             File.Delete("highscore.txt");
@@ -88,7 +86,14 @@ namespace FlappyBirds
             textWriter.Close();
             highscore.Text = score.ToString();
         }
-
+        private void UpdateScore()
+        {
+            score++;
+            if (score % 10 == 0)
+            {
+                speed += 1;
+            }
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             CheckCollisions();
@@ -99,9 +104,9 @@ namespace FlappyBirds
             Counter += deltaTime;
             ApplyGravity();
             MovePipes();
+            MoveGrass();
             Secondframe = ts.TotalMilliseconds;
         }
-
         private void CheckCollisions()
         {
             if (bird.Bounds.IntersectsWith(pipeBottom1.Bounds) ||
@@ -118,7 +123,6 @@ namespace FlappyBirds
                 EndGame();
             }
         }
-
         private void EndGame()
         {
             stopWatch.Stop();
@@ -133,7 +137,6 @@ namespace FlappyBirds
                 SetHighScore();
             }
         }
-
         private void ApplyGravity()
         {
             velocity += gravity * deltaTime;
@@ -143,13 +146,13 @@ namespace FlappyBirds
             }
             bird.Top += (int)(velocity * deltaTime);
         }
-
         private void Jump(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space && playing)
             {
                 velocity = -1.1;
                 bird.Top += (int)(velocity * deltaTime);
+                
             }
         }
         private void JumpMouse(object sender, MouseEventArgs e)
@@ -160,7 +163,6 @@ namespace FlappyBirds
                 bird.Top += (int)(velocity * deltaTime);
             }
         }
-
         private void MovePipes()
         {
             pipeTop1.Left -= speed;
@@ -172,7 +174,7 @@ namespace FlappyBirds
                 newHeight = random.NextDouble() * 248 + 276;
                 pipeBottom1.Top = (int)newHeight;
                 pipeTop1.Top = (int)newHeight - 714;
-                score++;
+                UpdateScore();
             }
 
             pipeTop2.Left -= speed;
@@ -184,7 +186,7 @@ namespace FlappyBirds
                 newHeight = random.NextDouble() * 248 + 276;
                 pipeBottom2.Top = (int)newHeight;
                 pipeTop2.Top = (int)newHeight - 714;
-                score++;
+                UpdateScore();
             }
 
             pipeTop3.Left -= speed;
@@ -196,7 +198,7 @@ namespace FlappyBirds
                 newHeight = random.NextDouble() * 248 + 276;
                 pipeBottom3.Top = (int)newHeight;
                 pipeTop3.Top = (int)newHeight - 714;
-                score++;
+                UpdateScore();
             }
 
             pipeTop4.Left -= speed;
@@ -208,10 +210,24 @@ namespace FlappyBirds
                 newHeight = random.NextDouble() * 248 + 276;
                 pipeBottom4.Top = (int)newHeight;
                 pipeTop4.Top = (int)newHeight - 714;
-                score++;
+                UpdateScore();
             }
         }
-
+        private void MoveGrass()
+        {
+            grass.Left -= speed;
+            grass2.Left -= speed;
+            if (grass.Left < -1444)
+            {
+                grass.Left = 1445;
+                grass.BringToFront();
+            }
+            if (grass2.Left < -1444)
+            {
+                grass2.Left = 1445;
+                grass2.BringToFront();
+            }
+        }
         private void SetPipeLocations()
         {
             pipeBottom1.Visible = true;
@@ -224,38 +240,36 @@ namespace FlappyBirds
             pipeTop3.Visible = true;
             pipeTop4.Visible = true;
 
-            newHeight = random.NextDouble() * 248 + 276;
+            newHeight = random.NextDouble() * 248 + 300;
             pipeBottom1.Top = (int)newHeight;
             pipeBottom1.Left = 681;
             pipeTop1.Top = (int)newHeight - 800;
             pipeTop1.Left = 681;
 
-            newHeight = random.NextDouble() * 248 + 276;
+            newHeight = random.NextDouble() * 248 + 300;
             pipeBottom2.Top = (int)newHeight;
             pipeBottom2.Left = 1188;
             pipeTop2.Top = (int)newHeight - 800;
             pipeTop2.Left = 1188;
 
-            newHeight = random.NextDouble() * 248 + 276;
+            newHeight = random.NextDouble() * 248 + 300;
             pipeBottom3.Top = (int)newHeight;
             pipeBottom3.Left = 1675;
             pipeTop3.Top = (int)newHeight - 800;
             pipeTop3.Left = 1675;
 
-            newHeight = random.NextDouble() * 248 + 276;
+            newHeight = random.NextDouble() * 248 + 300;
             pipeBottom4.Top = (int)newHeight;
             pipeBottom4.Left = 2152;
             pipeTop4.Top = (int)newHeight - 800;
             pipeTop4.Left = 2152;
         }
-
         private void start_MouseClick(object sender, MouseEventArgs e)
         {
             StartGame();
             start.Enabled = false;
             start.Visible = false;
         }
-
         private void restart_MouseClick(object sender, MouseEventArgs e)
         {
             RestartGame();
