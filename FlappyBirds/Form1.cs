@@ -15,8 +15,8 @@ namespace FlappyBirds
     {
         private Timer timer;
         private bool playing = false;
-        private static int speed = 10;
-        private float gravity = 0.00981f/1.5f;
+        private static int speed;
+        private float gravity;
         private int score = 0;
         private double velocity = 0;
         private double deltaTime = 0;
@@ -29,16 +29,23 @@ namespace FlappyBirds
         public Form1()
         {
             InitializeComponent();
-            random = new Random();
-            SetPipeLocations();
             timer = new Timer();
             timer.Interval = 20;
             timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
-
             stopWatch = new Stopwatch();
-            stopWatch.Start();
+        }
 
+        private void StartGame()
+        {
+            speed = 10;
+            gravity = 0.00981f / 1.5f;
+            bird.Left = 133;
+            bird.Top = 92;
+            playing = true;
+            random = new Random();
+            SetPipeLocations();
+            timer.Start();
+            stopWatch.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -73,10 +80,13 @@ namespace FlappyBirds
 
         private void EndGame()
         {
+            stopWatch.Stop();
             timer.Stop();
             playing = false;
             speed = 0;
             gravity = 0;
+            restart.Visible = true;
+            restart.Enabled = true;
         }
 
         private void ApplyGravity()
@@ -91,7 +101,7 @@ namespace FlappyBirds
 
         private void Jump(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space && playing)
             {
                 velocity = -1.2;
                 Console.WriteLine(velocity);
@@ -100,9 +110,12 @@ namespace FlappyBirds
         }
         private void JumpMouse(object sender, MouseEventArgs e)
         {
-            velocity = -1.1;
-            Console.WriteLine(velocity);
-            bird.Top += (int)(velocity * deltaTime);
+            if (playing)
+            {
+                velocity = -1.1;
+                Console.WriteLine(velocity);
+                bird.Top += (int)(velocity * deltaTime);
+            }
         }
 
         private void MovePipes()
@@ -193,5 +206,18 @@ namespace FlappyBirds
             pipeTop4.Left = 2152;
         }
 
+        private void start_Click(object sender, EventArgs e)
+        {
+            StartGame();
+            start.Visible = false;
+            start.Enabled = false;
+        }
+
+        private void restart_Click(object sender, EventArgs e)
+        {
+            StartGame();
+            restart.Visible = false;
+            restart.Enabled = false;
+        }
     }
 }
