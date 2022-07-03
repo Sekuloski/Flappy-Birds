@@ -151,7 +151,7 @@ namespace FlappyBirds
         }
         private void Jump(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space && playing)
+            if (e.KeyCode == Keys.Up && playing)
             {
                 velocity = -1.1;
                 bird.Top += (int)(velocity * deltaTime);
