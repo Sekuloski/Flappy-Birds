@@ -4,7 +4,7 @@ This project is a recreation of the famous "Flappy Bird" game that took the mobi
 
 ## How to play
 
-The game is very simple. **Jump** in the middle of the obstacles. Jumping is done using the left mouse button or the up arrow. The game ends if the player either hits the obstacles, hits the ground, or goes too high. The goal is to get as far as possible, i.e get the most points. The highest score is kept on a local file.
+The game is very simple. **Jump** in the middle of the obstacles. Jumping is done using the left mouse button or the up arrow. The game ends if the player either hits the obstacles, hits the ground, or goes too high. The goal is to get as far as possible, i.e get the most points. The highest score is kept on a local file. If the player loses, he has the opportunity to try again from the beginning.
 
 ![image](https://user-images.githubusercontent.com/79922210/177042737-fbf5f1da-128a-494d-bc01-483cd3065468.png)
 
@@ -52,9 +52,15 @@ public partial class Form1 : Form
         private void Jump(object sender, KeyEventArgs e){...}  
         private void JumpMouse(object sender, MouseEventArgs e){...}  
         private void MovePipes(){...}  
-        private void MoveGrass(){...}  
+        private void MoveGrass(){...}
+        private void MoveClouds(){...}
         private void SetPipeLocations(){...}  
+        private void SetCloudLocations(){...}
         private void start_MouseClick(object sender, MouseEventArgs e){...}  
         private void restart_MouseClick(object sender, MouseEventArgs e){...}  
     }
 ```
+
+## A problem
+
+All of the images that have transparent backgrounds, show a color instead of being transparent. Even by setting the background color to Transparent, the color still stays. I haven't been able to solve this issue as it seems that windows forms don't have a way of dealing with transparent PNGs.
