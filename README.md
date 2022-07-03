@@ -10,7 +10,7 @@ The game is very simple. **Jump** in the middle of the obstacles. Jumping is don
 
 ## The code
 
-All the code is in one file, because all the variables required need to talk to each other easily. The game works by moving 4 pairs of pillars (obstacles) to the right and moving them back as soon as they leave the screen. This also happens to the ground, divided into 2 pieces. The player (the bird) is only controlled in the Y axis by a simple gravity simulation and a jump function, which adds velocity to the player.
+All the code is in one file, because all the variables required need to talk to each other easily. The game works by moving 4 pairs of pillars (obstacles) to the right and moving them back as soon as they leave the screen. This also happens to the ground, divided into 2 pieces. The player (the bird) is only controlled in the Y axis by a simple gravity simulation and a jump function, which adds velocity to the player. All of the movement is balanced by a deltaTime variable which ensures that the gameplay is identical on all devices regardless of the fps numbers.
 
 ```c#
 public partial class Form1 : Form
