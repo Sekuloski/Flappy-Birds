@@ -45,6 +45,8 @@
             this.highscoreLabel = new System.Windows.Forms.Label();
             this.highscore = new System.Windows.Forms.Label();
             this.grass2 = new System.Windows.Forms.PictureBox();
+            this.clouds1 = new System.Windows.Forms.PictureBox();
+            this.clouds2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bird)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grass)).BeginInit();
@@ -56,6 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grass2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clouds1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clouds2)).BeginInit();
             this.SuspendLayout();
             // 
             // label
@@ -248,6 +252,28 @@
             this.grass2.TabIndex = 16;
             this.grass2.TabStop = false;
             // 
+            // clouds1
+            // 
+            this.clouds1.Image = global::FlappyBirds.Properties.Resources.clouds1;
+            this.clouds1.Location = new System.Drawing.Point(681, -1);
+            this.clouds1.Name = "clouds1";
+            this.clouds1.Size = new System.Drawing.Size(518, 257);
+            this.clouds1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.clouds1.TabIndex = 17;
+            this.clouds1.TabStop = false;
+            this.clouds1.Visible = false;
+            // 
+            // clouds2
+            // 
+            this.clouds2.Image = global::FlappyBirds.Properties.Resources.clouds2;
+            this.clouds2.Location = new System.Drawing.Point(146, 309);
+            this.clouds2.Name = "clouds2";
+            this.clouds2.Size = new System.Drawing.Size(533, 273);
+            this.clouds2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.clouds2.TabIndex = 18;
+            this.clouds2.TabStop = false;
+            this.clouds2.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +297,8 @@
             this.Controls.Add(this.pipeBottom4);
             this.Controls.Add(this.bird);
             this.Controls.Add(this.pipeBottom1);
+            this.Controls.Add(this.clouds1);
+            this.Controls.Add(this.clouds2);
             this.Name = "Form1";
             this.Text = "Flappy Birds";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Jump);
@@ -286,6 +314,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grass2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clouds1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clouds2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,6 +340,8 @@
         private System.Windows.Forms.Label highscoreLabel;
         private System.Windows.Forms.Label highscore;
         private System.Windows.Forms.PictureBox grass2;
+        private System.Windows.Forms.PictureBox clouds1;
+        private System.Windows.Forms.PictureBox clouds2;
     }
 }
 

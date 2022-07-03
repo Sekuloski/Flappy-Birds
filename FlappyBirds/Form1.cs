@@ -34,6 +34,7 @@ namespace FlappyBirds
             GetHighScore();
             random = new Random();
             SetPipeLocations();
+            SetCloudLocations();
             timer = new Timer();
             timer.Interval = 1;
             timer.Tick += new EventHandler(Timer_Tick);
@@ -105,6 +106,7 @@ namespace FlappyBirds
             ApplyGravity();
             MovePipes();
             MoveGrass();
+            MoveClouds();
             Secondframe = ts.TotalMilliseconds;
         }
         private void CheckCollisions()
@@ -231,6 +233,21 @@ namespace FlappyBirds
                 grass2.BringToFront();
             }
         }
+        private void MoveClouds()
+        {
+            clouds1.Left -= speed/2;
+            clouds2.Left -= speed/2;
+            if (clouds1.Left < -600)
+            {
+                clouds1.Left = 1400;
+                clouds1.Top = (int)(random.NextDouble() * 470);
+            }
+            if (clouds2.Left < -600)
+            {
+                clouds2.Left = 1400;
+                clouds2.Top = (int)(random.NextDouble() * 470);
+            }
+        }
         private void SetPipeLocations()
         {
             pipeBottom1.Visible = true;
@@ -266,6 +283,16 @@ namespace FlappyBirds
             pipeBottom4.Left = 2152;
             pipeTop4.Top = (int)newHeight - 800;
             pipeTop4.Left = 2152;
+        }
+        private void SetCloudLocations()
+        {
+            clouds1.Visible = true;
+            clouds2.Visible = true;
+
+            clouds1.Top = (int)(random.NextDouble() * 470);
+            clouds1.Left = 1400;
+            clouds2.Top = (int)(random.NextDouble() * 470);
+            clouds2.Left = 2000;
         }
         private void start_MouseClick(object sender, MouseEventArgs e)
         {
