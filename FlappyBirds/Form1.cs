@@ -109,15 +109,18 @@ namespace FlappyBirds
         }
         private void CheckCollisions()
         {
-            if (bird.Bounds.IntersectsWith(pipeBottom1.Bounds) ||
-                bird.Bounds.IntersectsWith(pipeTop1.Bounds) ||
-                bird.Bounds.IntersectsWith(pipeBottom2.Bounds) ||
-                bird.Bounds.IntersectsWith(pipeTop2.Bounds) ||
-                bird.Bounds.IntersectsWith(pipeBottom3.Bounds) ||
-                bird.Bounds.IntersectsWith(pipeTop3.Bounds) ||
-                bird.Bounds.IntersectsWith(pipeBottom4.Bounds) ||
-                bird.Bounds.IntersectsWith(pipeTop4.Bounds) ||
-                bird.Bounds.IntersectsWith(grass.Bounds))
+            Console.WriteLine(bird.Top);
+            Console.WriteLine(this.Size.Height);
+            if (bird.Bounds.IntersectsWith(pipeBottom1.Bounds)  ||
+                bird.Bounds.IntersectsWith(pipeTop1.Bounds)     ||
+                bird.Bounds.IntersectsWith(pipeBottom2.Bounds)  ||
+                bird.Bounds.IntersectsWith(pipeTop2.Bounds)     ||
+                bird.Bounds.IntersectsWith(pipeBottom3.Bounds)  ||
+                bird.Bounds.IntersectsWith(pipeTop3.Bounds)     ||
+                bird.Bounds.IntersectsWith(pipeBottom4.Bounds)  ||
+                bird.Bounds.IntersectsWith(pipeTop4.Bounds)     ||
+                bird.Bounds.IntersectsWith(grass.Bounds)        ||
+                bird.Top < 0)
             {
                 Console.WriteLine("Collision");
                 EndGame();
