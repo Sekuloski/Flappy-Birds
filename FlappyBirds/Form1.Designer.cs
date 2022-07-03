@@ -55,19 +55,23 @@
             // label
             // 
             this.label.AutoSize = true;
+            this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(12, 9);
+            this.label.Location = new System.Drawing.Point(16, 11);
+            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(93, 31);
+            this.label.Size = new System.Drawing.Size(115, 39);
             this.label.TabIndex = 4;
             this.label.Text = "Score:";
             // 
             // bird
             // 
+            this.bird.BackColor = System.Drawing.Color.Transparent;
             this.bird.Image = global::FlappyBirds.Properties.Resources.bird;
-            this.bird.Location = new System.Drawing.Point(38, 208);
+            this.bird.Location = new System.Drawing.Point(51, 256);
+            this.bird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bird.Name = "bird";
-            this.bird.Size = new System.Drawing.Size(100, 75);
+            this.bird.Size = new System.Drawing.Size(133, 92);
             this.bird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bird.TabIndex = 2;
             this.bird.TabStop = false;
@@ -75,9 +79,10 @@
             // pipeTop1
             // 
             this.pipeTop1.Image = global::FlappyBirds.Properties.Resources.pipeTop;
-            this.pipeTop1.Location = new System.Drawing.Point(511, -357);
+            this.pipeTop1.Location = new System.Drawing.Point(681, -439);
+            this.pipeTop1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeTop1.Name = "pipeTop1";
-            this.pipeTop1.Size = new System.Drawing.Size(100, 500);
+            this.pipeTop1.Size = new System.Drawing.Size(133, 615);
             this.pipeTop1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeTop1.TabIndex = 1;
             this.pipeTop1.TabStop = false;
@@ -85,9 +90,10 @@
             // grass
             // 
             this.grass.Image = global::FlappyBirds.Properties.Resources.ground;
-            this.grass.Location = new System.Drawing.Point(-11, 586);
+            this.grass.Location = new System.Drawing.Point(-21, 880);
+            this.grass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grass.Name = "grass";
-            this.grass.Size = new System.Drawing.Size(1296, 107);
+            this.grass.Size = new System.Drawing.Size(1931, 330);
             this.grass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.grass.TabIndex = 3;
             this.grass.TabStop = false;
@@ -95,9 +101,10 @@
             // pipeBottom1
             // 
             this.pipeBottom1.Image = global::FlappyBirds.Properties.Resources.pipeBottom;
-            this.pipeBottom1.Location = new System.Drawing.Point(511, 357);
+            this.pipeBottom1.Location = new System.Drawing.Point(681, 439);
+            this.pipeBottom1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeBottom1.Name = "pipeBottom1";
-            this.pipeBottom1.Size = new System.Drawing.Size(100, 500);
+            this.pipeBottom1.Size = new System.Drawing.Size(133, 615);
             this.pipeBottom1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeBottom1.TabIndex = 0;
             this.pipeBottom1.TabStop = false;
@@ -105,9 +112,10 @@
             // pipeTop2
             // 
             this.pipeTop2.Image = global::FlappyBirds.Properties.Resources.pipeTop;
-            this.pipeTop2.Location = new System.Drawing.Point(891, -357);
+            this.pipeTop2.Location = new System.Drawing.Point(1188, -439);
+            this.pipeTop2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeTop2.Name = "pipeTop2";
-            this.pipeTop2.Size = new System.Drawing.Size(100, 500);
+            this.pipeTop2.Size = new System.Drawing.Size(133, 615);
             this.pipeTop2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeTop2.TabIndex = 6;
             this.pipeTop2.TabStop = false;
@@ -115,9 +123,10 @@
             // pipeBottom2
             // 
             this.pipeBottom2.Image = global::FlappyBirds.Properties.Resources.pipeBottom;
-            this.pipeBottom2.Location = new System.Drawing.Point(891, 357);
+            this.pipeBottom2.Location = new System.Drawing.Point(1188, 439);
+            this.pipeBottom2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeBottom2.Name = "pipeBottom2";
-            this.pipeBottom2.Size = new System.Drawing.Size(100, 500);
+            this.pipeBottom2.Size = new System.Drawing.Size(133, 615);
             this.pipeBottom2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeBottom2.TabIndex = 5;
             this.pipeBottom2.TabStop = false;
@@ -125,9 +134,10 @@
             // pipeTop3
             // 
             this.pipeTop3.Image = global::FlappyBirds.Properties.Resources.pipeTop;
-            this.pipeTop3.Location = new System.Drawing.Point(1256, -357);
+            this.pipeTop3.Location = new System.Drawing.Point(1675, -439);
+            this.pipeTop3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeTop3.Name = "pipeTop3";
-            this.pipeTop3.Size = new System.Drawing.Size(100, 500);
+            this.pipeTop3.Size = new System.Drawing.Size(133, 615);
             this.pipeTop3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeTop3.TabIndex = 8;
             this.pipeTop3.TabStop = false;
@@ -135,9 +145,10 @@
             // pipeBottom3
             // 
             this.pipeBottom3.Image = global::FlappyBirds.Properties.Resources.pipeBottom;
-            this.pipeBottom3.Location = new System.Drawing.Point(1256, 354);
+            this.pipeBottom3.Location = new System.Drawing.Point(1675, 436);
+            this.pipeBottom3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeBottom3.Name = "pipeBottom3";
-            this.pipeBottom3.Size = new System.Drawing.Size(100, 500);
+            this.pipeBottom3.Size = new System.Drawing.Size(133, 615);
             this.pipeBottom3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeBottom3.TabIndex = 7;
             this.pipeBottom3.TabStop = false;
@@ -145,9 +156,10 @@
             // pipeTop4
             // 
             this.pipeTop4.Image = global::FlappyBirds.Properties.Resources.pipeTop;
-            this.pipeTop4.Location = new System.Drawing.Point(1614, -316);
+            this.pipeTop4.Location = new System.Drawing.Point(2152, -389);
+            this.pipeTop4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeTop4.Name = "pipeTop4";
-            this.pipeTop4.Size = new System.Drawing.Size(100, 500);
+            this.pipeTop4.Size = new System.Drawing.Size(133, 615);
             this.pipeTop4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeTop4.TabIndex = 10;
             this.pipeTop4.TabStop = false;
@@ -155,9 +167,10 @@
             // pipeBottom4
             // 
             this.pipeBottom4.Image = global::FlappyBirds.Properties.Resources.pipeBottom;
-            this.pipeBottom4.Location = new System.Drawing.Point(1614, 354);
+            this.pipeBottom4.Location = new System.Drawing.Point(2152, 436);
+            this.pipeBottom4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pipeBottom4.Name = "pipeBottom4";
-            this.pipeBottom4.Size = new System.Drawing.Size(100, 500);
+            this.pipeBottom4.Size = new System.Drawing.Size(133, 615);
             this.pipeBottom4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeBottom4.TabIndex = 9;
             this.pipeBottom4.TabStop = false;
@@ -165,23 +178,25 @@
             // scoreText
             // 
             this.scoreText.AutoSize = true;
+            this.scoreText.BackColor = System.Drawing.Color.Transparent;
             this.scoreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreText.Location = new System.Drawing.Point(100, 9);
+            this.scoreText.Location = new System.Drawing.Point(133, 11);
+            this.scoreText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.scoreText.Name = "scoreText";
-            this.scoreText.Size = new System.Drawing.Size(29, 31);
+            this.scoreText.Size = new System.Drawing.Size(36, 39);
             this.scoreText.TabIndex = 11;
             this.scoreText.Text = "0";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.scoreText);
             this.Controls.Add(this.pipeTop3);
             this.Controls.Add(this.pipeTop2);
-            this.Controls.Add(this.label);
             this.Controls.Add(this.pipeTop1);
             this.Controls.Add(this.grass);
             this.Controls.Add(this.pipeBottom1);
@@ -190,6 +205,7 @@
             this.Controls.Add(this.pipeTop4);
             this.Controls.Add(this.pipeBottom4);
             this.Controls.Add(this.bird);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Flappy Birds";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Jump);
