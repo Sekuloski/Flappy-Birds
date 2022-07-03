@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace FlappyBirds
         private static int speed;
         private float gravity;
         private int score = 0;
+        private int highScore;
         private double velocity = 0;
         private double deltaTime = 0;
         private static double Counter = 0;
@@ -29,23 +31,62 @@ namespace FlappyBirds
         public Form1()
         {
             InitializeComponent();
+            GetHighScore();
+            random = new Random();
+            SetPipeLocations();
             timer = new Timer();
-            timer.Interval = 20;
+            timer.Interval = 1;
             timer.Tick += new EventHandler(Timer_Tick);
             stopWatch = new Stopwatch();
         }
-
         private void StartGame()
         {
-            speed = 10;
+            speed = 5;
             gravity = 0.00981f / 1.5f;
             bird.Left = 133;
             bird.Top = 92;
             playing = true;
-            random = new Random();
+            timer.Start();
+            stopWatch.Start();
+        }        
+        private void RestartGame()
+        {
+            score = 0;
+            scoreText.Text = "0";
+            speed = 5;
+            gravity = 0.00981f / 1.5f;
+            bird.Left = 133;
+            bird.Top = 92;
+            playing = true;
             SetPipeLocations();
             timer.Start();
             stopWatch.Start();
+        }
+
+        private void GetHighScore()
+        {
+            if (!File.Exists("highscore.txt"))
+            {
+                TextWriter textWriter = new StreamWriter("highscore.txt");
+                textWriter.WriteLine(0);
+                textWriter.Close();
+                highScore = 0;
+                return;
+            }
+
+            TextReader textReader = new StreamReader("highscore.txt");
+            highScore = int.Parse(textReader.ReadLine());
+            Console.WriteLine(highScore);
+            highscore.Text = highScore.ToString();
+        }
+
+        private void SetHighScore()
+        {
+            File.Delete("highscore.txt");
+            TextWriter textWriter = new StreamWriter("highscore.txt");
+            textWriter.WriteLine(score);
+            textWriter.Close();
+            highscore.Text = score.ToString();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -87,6 +128,10 @@ namespace FlappyBirds
             gravity = 0;
             restart.Visible = true;
             restart.Enabled = true;
+            if (score > highScore)
+            {
+                SetHighScore();
+            }
         }
 
         private void ApplyGravity()
@@ -103,8 +148,7 @@ namespace FlappyBirds
         {
             if (e.KeyCode == Keys.Space && playing)
             {
-                velocity = -1.2;
-                Console.WriteLine(velocity);
+                velocity = -1.1;
                 bird.Top += (int)(velocity * deltaTime);
             }
         }
@@ -113,7 +157,6 @@ namespace FlappyBirds
             if (playing)
             {
                 velocity = -1.1;
-                Console.WriteLine(velocity);
                 bird.Top += (int)(velocity * deltaTime);
             }
         }
@@ -206,18 +249,19 @@ namespace FlappyBirds
             pipeTop4.Left = 2152;
         }
 
-        private void start_Click(object sender, EventArgs e)
+        private void start_MouseClick(object sender, MouseEventArgs e)
         {
             StartGame();
-            start.Visible = false;
             start.Enabled = false;
+            start.Visible = false;
         }
 
-        private void restart_Click(object sender, EventArgs e)
+        private void restart_MouseClick(object sender, MouseEventArgs e)
         {
-            StartGame();
-            restart.Visible = false;
+            RestartGame();
             restart.Enabled = false;
+            restart.Visible = false;
         }
+
     }
 }

@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="highscore.txt" />
     <Content Include="Images\bird.png" />
     <Content Include="Images\clouds1.png" />
     <Content Include="Images\clouds2.png" />
